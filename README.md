@@ -1,7 +1,6 @@
 # Rails CMS Bootstrap
 
-This is a fairly bare bones template illustrating how to create the beginnings of a CMS UI using
-Rails 5/Postgres 9 using Bootstrap 4.
+This is a fairly bare bones template illustrating how to create the beginnings of a CMS UI using Rails 5, Postgres 9, and Bootstrap 4.
 
 ## Features
 
@@ -28,6 +27,20 @@ User.create!(name: 'Admin User', email: 'admin@example.com', password: 'admin')
 exit
 bin/rails s
 open http://localhost:3000
+```
+
+## Deploying to Heroku
+
+Create your app on heroku with the Postgres addon and then do:
+
+```
+ heroku git:remote -a <my-heroku-app>
+ git push heroku master
+ heroku run rake db:migrate
+ heroku run rails c
+ # Create the user as described under getting Started
+ exit
+ heroku open
 ```
 
 ## Resources
