@@ -1,0 +1,6 @@
+<h1>Editing Site</h1>
+
+<%= render 'form', site: @site %>
+
+<%= link_to 'Delete', @site, method: :delete, data: { confirm: 'Are you sure?' } %>
+| <%= link_to 'Cancel', sites_path %>

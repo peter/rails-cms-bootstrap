@@ -1,0 +1,37 @@
+<%= form_for(page) do |f| %>
+  <% if page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% page.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :site_id %>
+    <%= f.select :site_id, Site.all.map { |s| [s.key, s.id] }, {}, {class: "form-control"} %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, class: "form-control" %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :widgets %>
+    <%= f.select :widgets, Widget.order("id DESC").map { |w| [w.title, w.id] }, {}, {class: "form-control", multiple: true} %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </fieldset>
+<% end %>

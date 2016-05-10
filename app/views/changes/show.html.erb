@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @change.created_at %>
+</p>
+
+<p>
+  <strong>Change:</strong>
+  <%= @change %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @change.user %> (<%= @change.user.email %>)
+</p>
+
+<p>
+  <strong>Params:</strong>
+  <%= debug @change.params %>
+</p>
+
+<p>
+  <strong>Attributes:</strong>
+  <%= debug @change.model_attributes %>
+</p>

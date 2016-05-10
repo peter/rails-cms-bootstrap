@@ -1,0 +1,6 @@
+<h1>Editing Page</h1>
+
+<%= render 'form', page: @page %>
+
+<%= link_to 'Delete', @page, method: :delete, data: { confirm: 'Are you sure?' } %>
+| <%= link_to 'Cancel', pages_path %>

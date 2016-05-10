@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Widgets</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Type</th>
+      <th>Created at</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @widgets.each do |widget| %>
+      <tr>
+        <td><%= link_to widget.title, edit_widget_path(widget) %></td>
+        <td><%= widget.type %></td>
+        <td><%= widget.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Widget', new_widget_path, class: "btn btn-primary" %>

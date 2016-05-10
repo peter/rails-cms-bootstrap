@@ -1,0 +1,32 @@
+<%= form_for(widget) do |f| %>
+  <% if widget.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(widget.errors.count, "error") %> prohibited this widget from being saved:</h2>
+
+      <ul>
+      <% widget.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset class="form-group">
+    <%= f.label :type %>
+    <%= f.select :type, Widget.descendants.map {|c| [c, c] }, {}, {class: "form-control"} %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, class: "form-control" %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </fieldset>
+<% end %>

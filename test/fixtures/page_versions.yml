@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# one:
+#   page_id: 1
+#   version_number: 1
+#   created_by: 1
+#   title: MyString
+#   body: MyText
+#
+# two:
+#   page_id: 1
+#   version_number: 1
+#   created_by: 1
+#   title: MyString
+#   body: MyText

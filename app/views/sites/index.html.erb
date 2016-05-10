@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sites</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Key</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sites.each do |site| %>
+      <tr>
+        <td><%= link_to site.key, edit_site_path(site) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Site', new_site_path, class: "btn btn-primary" %>

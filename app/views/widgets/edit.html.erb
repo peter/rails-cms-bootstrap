@@ -1,0 +1,6 @@
+<h1>Editing Widget</h1>
+
+<%= render 'form', widget: @widget %>
+
+<%= link_to 'Delete', @widget, method: :delete, data: { confirm: 'Are you sure?' } %>
+| <%= link_to 'Cancel', widgets_path %>

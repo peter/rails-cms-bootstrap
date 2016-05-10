@@ -1,0 +1,2 @@
+class PageVersion < ApplicationRecord
+end
