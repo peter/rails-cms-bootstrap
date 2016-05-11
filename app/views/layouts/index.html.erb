@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Layouts</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Sections</th>
+      <th>Created at</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @layouts.each do |layout| %>
+      <tr>
+        <td><%= link_to layout.name, edit_layout_path(layout) %></td>
+        <td><%= layout.sections.join(', ') %></td>
+        <td><%= layout.created_at %> (<%= time_ago_in_words(layout.created_at) %> ago)</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Layout', new_layout_path %>

@@ -3,6 +3,7 @@ class CreatePages < ActiveRecord::Migration[5.0]
     create_table :pages do |t|
       t.string :title, null: false
       t.string :path, null: false
+      t.integer :layout_id, null: false
       t.text :body
       t.integer :site_id, null: false
       t.integer :version_number, null: false

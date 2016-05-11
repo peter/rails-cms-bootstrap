@@ -1,0 +1,27 @@
+<%= form_for(layout) do |f| %>
+  <% if layout.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(layout.errors.count, "error") %> prohibited this layout from being saved:</h2>
+
+      <ul>
+      <% layout.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.label :sections %>
+    <%= f.text_field :sections, class: "form-control" %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </fieldset>
+<% end %>

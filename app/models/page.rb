@@ -4,6 +4,7 @@ class Page < ApplicationRecord
   validates :path, presence: true
 
   belongs_to :site
+  belongs_to :layout
   has_many :published_paths, as: :item
   Versioned.add(self, columns: [:title, :path, :body, :doc, :status, :publish_at, :unpublish_at])
 

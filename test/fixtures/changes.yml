@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user_id: 1
-  controller: MyString
-  action: MyString
-  params: MyText
-
-two:
-  user_id: 1
-  controller: MyString
-  action: MyString
-  params: MyText
+# one:
+#   user_id: 1
+#   controller: MyString
+#   action: MyString
+#   params: MyText
+#
+# two:
+#   user_id: 1
+#   controller: MyString
+#   action: MyString
+#   params: MyText

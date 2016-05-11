@@ -2,5 +2,8 @@
 
 # one:
 #   name: MyString
-#   email: MyString
-#   password_digest: MyString
+#   sections:
+#
+# two:
+#   name: MyString
+#   sections:

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160511042146) do
+ActiveRecord::Schema.define(version: 20160511113347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 20160511042146) do
     t.text     "model_attributes"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "layouts", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.jsonb    "sections",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "page_versions", force: :cascade do |t|
@@ -43,6 +50,7 @@ ActiveRecord::Schema.define(version: 20160511042146) do
   create_table "pages", force: :cascade do |t|
     t.string   "title",                            null: false
     t.string   "path",                             null: false
+    t.integer  "layout_id",                        null: false
     t.text     "body"
     t.integer  "site_id",                          null: false
     t.integer  "version_number",                   null: false
@@ -91,5 +99,6 @@ ActiveRecord::Schema.define(version: 20160511042146) do
 
   add_foreign_key "changes", "users", name: "changes_user_id_fk", on_delete: :cascade
   add_foreign_key "page_versions", "pages", name: "page_versions_page_id_fk", on_delete: :cascade
+  add_foreign_key "pages", "layouts", name: "pages_layout_id_fk", on_delete: :cascade
   add_foreign_key "pages", "sites", name: "pages_site_id_fk", on_delete: :cascade
 end

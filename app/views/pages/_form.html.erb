@@ -17,6 +17,11 @@
   </fieldset>
 
   <fieldset class="form-group">
+    <%= f.label :layout_id, "Layout" %>
+    <%= f.select :layout_id, Layout.order("id").map { |l| [l.name, l.id] }, {}, {class: "form-control"} %>
+  </fieldset>
+
+  <fieldset class="form-group">
     <%= f.label :path %>
     <%= f.text_field :path, class: "form-control" %>
   </fieldset>
