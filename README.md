@@ -7,8 +7,8 @@ This is a fairly bare bones template illustrating how to create the beginnings o
 * The model hierarchy is: Site -> Page -> Widget. The page/widget relationship
   is modeled via an array of IDs in a JSON column in Postgres. It is easier to version documents
   than normalized relational data models.
-* There is the beginnings of a simple versioning scheme for the Page model. It saves versions
-  in a PageVersion model.
+* There is the beginnings of a simple versioning scheme for the Page model. It saves versions in a PageVersion model.
+* The Page model has a publication status and it maintains a unique url (path).
 * Has a simple User model and login/login routes. Authentication is required for all pages.
 * There is a change log (audit) for all write operations that are performed by editors in the CMS
 
@@ -38,7 +38,7 @@ Create your app on heroku with the Postgres addon and then do:
  git push heroku master
  heroku run rake db:migrate
  heroku run rails c
- # Create the user as described under getting Started
+ # Create the user as described under "Getting Started"
  exit
  heroku open
 ```

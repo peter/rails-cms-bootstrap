@@ -17,9 +17,20 @@
   </fieldset>
 
   <fieldset class="form-group">
-    <%= f.label :site_id %>
-    <%= f.select :site_id, Site.all.map { |s| [s.key, s.id] }, {}, {class: "form-control"} %>
+    <%= f.label :path %>
+    <%= f.text_field :path, class: "form-control" %>
   </fieldset>
+
+  <% if page.new_record? %>
+    <fieldset class="form-group">
+      <%= f.label :site_id %>
+      <%= f.select :site_id, Site.all.map { |s| [s.key, s.id] }, {}, {class: "form-control"} %>
+    </fieldset>
+  <% else %>
+    <p>
+      Site: <%= page.site %>
+    </p>
+  <% end %>
 
   <fieldset class="form-group">
     <%= f.label :body %>
@@ -29,6 +40,13 @@
   <fieldset class="form-group">
     <%= f.label :widgets %>
     <%= f.select :widgets, Widget.order("id DESC").map { |w| [w.title, w.id] }, {}, {class: "form-control", multiple: true} %>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <%= f.radio_button(:status, "draft") %>
+    <%= f.label :status, "Draft" %>
+    <%= f.radio_button(:status, "published") %>
+    <%= f.label :status, "Published" %>
   </fieldset>
 
   <fieldset class="form-group">

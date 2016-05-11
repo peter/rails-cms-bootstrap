@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  body: MyText
-  site_id: 1
-  version_number: 1
-
-two:
-  title: MyString
-  body: MyText
-  site_id: 1
-  version_number: 1
+# one:
+#   title: MyString
+#   body: MyText
+#   site_id: 1
+#   version_number: 1
+#
+# two:
+#   title: MyString
+#   body: MyText
+#   site_id: 1
+#   version_number: 1

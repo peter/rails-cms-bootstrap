@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160510043247) do
+ActiveRecord::Schema.define(version: 20160511042146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,23 +27,42 @@ ActiveRecord::Schema.define(version: 20160510043247) do
   end
 
   create_table "page_versions", force: :cascade do |t|
-    t.integer  "page_id",                       null: false
-    t.integer  "version_number",                null: false
+    t.integer  "page_id",                          null: false
+    t.integer  "version_number",                   null: false
     t.string   "title"
+    t.string   "path"
     t.text     "body"
-    t.jsonb    "doc",            default: "{}", null: false
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.jsonb    "doc",            default: "{}",    null: false
+    t.string   "status",         default: "draft"
+    t.datetime "publish_at"
+    t.datetime "unpublish_at"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "pages", force: :cascade do |t|
-    t.string   "title",                         null: false
+    t.string   "title",                            null: false
+    t.string   "path",                             null: false
     t.text     "body"
-    t.integer  "site_id",                       null: false
-    t.integer  "version_number",                null: false
-    t.jsonb    "doc",            default: "{}", null: false
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.integer  "site_id",                          null: false
+    t.integer  "version_number",                   null: false
+    t.jsonb    "doc",            default: "{}",    null: false
+    t.string   "status",         default: "draft"
+    t.datetime "publish_at"
+    t.datetime "unpublish_at"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.index ["path", "site_id"], name: "index_pages_on_path_and_site_id", unique: true, using: :btree
+  end
+
+  create_table "published_paths", force: :cascade do |t|
+    t.string   "path",       null: false
+    t.integer  "site_id",    null: false
+    t.integer  "item_id",    null: false
+    t.string   "item_type",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["path", "site_id"], name: "index_published_paths_on_path_and_site_id", unique: true, using: :btree
   end
 
   create_table "sites", force: :cascade do |t|
