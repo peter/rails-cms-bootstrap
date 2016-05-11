@@ -16,15 +16,13 @@ This is a fairly bare bones Rails app illustrating how to create the beginnings 
 
 * Simplicity is a prerequisite for reliability
 * Be restrictive with library dependencies. This helps with simplicity and Rails upgrades.
+* Respect Rails and Ruby idioms
 
 ## Getting Started
 
 ```
 bundle install
-bin/rake db:create db:migrate
-bin/rails c
-User.create!(name: 'Admin User', email: 'admin@example.com', password: 'admin')
-exit
+bin/rake db:create db:migrate db:seed
 bin/rails s
 open http://localhost:3000
 ```
@@ -34,13 +32,10 @@ open http://localhost:3000
 Create your app on heroku with the Postgres addon and then do:
 
 ```
- heroku git:remote -a <my-heroku-app>
- git push heroku master
- heroku run rake db:migrate
- heroku run rails c
- # Create the user as described under "Getting Started"
- exit
- heroku open
+heroku git:remote -a <my-heroku-app>
+git push heroku master
+heroku run rake db:migrate db:seed
+heroku open
 ```
 
 ## Resources
