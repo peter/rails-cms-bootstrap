@@ -2,6 +2,9 @@
 
 This is a fairly bare bones Rails app illustrating how to create the beginnings of a CMS UI using Rails 5, Postgres 9, and Bootstrap 4.
 
+There is a [demo app](https://rails-cms-bootstrap.herokuapp.com) where you can log in with
+admin@example.com / admin.
+
 ## Features
 
 * The model hierarchy is: Site -> Page -> Widget. The page/widget relationship
