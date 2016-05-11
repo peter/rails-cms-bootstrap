@@ -1,6 +1,6 @@
 # Rails CMS Bootstrap
 
-This is a fairly bare bones template illustrating how to create the beginnings of a CMS UI using Rails 5, Postgres 9, and Bootstrap 4.
+This is a fairly bare bones Rails app illustrating how to create the beginnings of a CMS UI using Rails 5, Postgres 9, and Bootstrap 4.
 
 ## Features
 
@@ -9,8 +9,8 @@ This is a fairly bare bones template illustrating how to create the beginnings o
   than normalized relational data models.
 * There is the beginnings of a simple versioning scheme for the Page model. It saves versions in a PageVersion model.
 * The Page model has a publication status and it maintains a unique url (path).
-* Has a simple User model and login/login routes. Authentication is required for all pages.
-* There is a change log (audit) for all write operations that are performed by editors in the CMS
+* There is a User model and login/login routes. Authentication is required for all pages.
+* There is a change log (audit) for all write operations that are performed by users (editors) of the CMS
 
 ## Design Principles
 
