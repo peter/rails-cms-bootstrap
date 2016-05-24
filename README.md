@@ -5,6 +5,8 @@ This is a fairly bare bones Rails app illustrating how to create the beginnings 
 There is a [demo app](https://rails-cms-bootstrap.herokuapp.com) where you can log in with
 admin@example.com / admin.
 
+*NOTE*: I have also put together a [Clojure CMS REST API based on Mongodb](https://github.com/peter/clojure-cms-api). For a CMS with versioning a document database seems like a good fit.
+
 ## Features
 
 * The model hierarchy is: Site -> Page -> Widget. The page/widget relationship
